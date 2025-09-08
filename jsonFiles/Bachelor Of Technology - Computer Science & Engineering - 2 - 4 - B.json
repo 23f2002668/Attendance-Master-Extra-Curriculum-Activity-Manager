@@ -1,0 +1,73 @@
+{
+    "Monday": [
+              ["Data Structures and Algorithms", "Madhavan Mukund", "09:10 am - 10:00 am"],
+              ["Database Management Systems", "Prof. Partha Pratim Das", "10:00 am - 10:50 am"],
+              ["Modern Application Development - I", "Thejesh G N", "11:00 am - 11:50 am"],
+              ["Programming Concepts Using Java", "Madhavan Mukund", "11:50 am - 12:40 pm"],
+              ["Interval", "", "12-40 pm - 01:30 pm"],
+              ["System Commands", "Prof. Gandham Phanikumar", "01:30 pm - 02:20 pm"],
+              ["Machine Learning Foundations", "Harish Guruprasad Ramaswamy", "02:20 pm - 03:10 pm"],
+              ["Business Data Management", "Dr. G Venkatesh", "03:10 pm - 04:00 pm"],
+              ["Tools in Data Science", "S. Anand", "04:00 pm - 04:50 pm"]
+    ],
+
+    "Tuesday": [
+              ["Data Structures and Algorithms", "Madhavan Mukund", "09:10 am - 10:00 am"],
+              ["Database Management Systems", "Prof. Partha Pratim Das", "10:00 am - 10:50 am"],
+              ["Modern Application Development - I", "Thejesh G N", "11:00 am - 11:50 am"],
+              ["Programming Concepts Using Java", "Madhavan Mukund", "11:50 am - 12:40 pm"],
+              ["Interval", "", "12-40 pm - 01:30 pm"],
+              ["System Commands", "Prof. Gandham Phanikumar", "01:30 pm - 02:20 pm"],
+              ["Machine Learning Foundations", "Harish Guruprasad Ramaswamy", "02:20 pm - 03:10 pm"],
+              ["Business Data Management", "Dr. G Venkatesh", "03:10 pm - 04:00 pm"],
+              ["Tools in Data Science", "S. Anand", "04:00 pm - 04:50 pm"]
+    ],
+
+    "Wednesday": [
+              ["Data Structures and Algorithms", "Madhavan Mukund", "09:10 am - 10:00 am"],
+              ["Database Management Systems", "Prof. Partha Pratim Das", "10:00 am - 10:50 am"],
+              ["Modern Application Development - I", "Thejesh G N", "11:00 am - 11:50 am"],
+              ["Programming Concepts Using Java", "Madhavan Mukund", "11:50 am - 12:40 pm"],
+              ["Interval", "", "12-40 pm - 01:30 pm"],
+              ["System Commands", "Prof. Gandham Phanikumar", "01:30 pm - 02:20 pm"],
+              ["Machine Learning Foundations", "Harish Guruprasad Ramaswamy", "02:20 pm - 03:10 pm"],
+              ["Business Data Management", "Dr. G Venkatesh", "03:10 pm - 04:00 pm"],
+              ["Tools in Data Science", "S. Anand", "04:00 pm - 04:50 pm"]
+    ],
+
+    "Thursday": [
+              ["Data Structures and Algorithms", "Madhavan Mukund", "09:10 am - 10:00 am"],
+              ["Database Management Systems", "Prof. Partha Pratim Das", "10:00 am - 10:50 am"],
+              ["Modern Application Development - I", "Thejesh G N", "11:00 am - 11:50 am"],
+              ["Programming Concepts Using Java", "Madhavan Mukund", "11:50 am - 12:40 pm"],
+              ["Interval", "", "12-40 pm - 01:30 pm"],
+              ["System Commands", "Prof. Gandham Phanikumar", "01:30 pm - 02:20 pm"],
+              ["Machine Learning Foundations", "Harish Guruprasad Ramaswamy", "02:20 pm - 03:10 pm"],
+              ["Business Data Management", "Dr. G Venkatesh", "03:10 pm - 04:00 pm"],
+              ["Tools in Data Science", "S. Anand", "04:00 pm - 04:50 pm"]
+    ],
+
+    "Friday": [
+              ["Data Structures and Algorithms", "Madhavan Mukund", "09:10 am - 10:00 am"],
+              ["Database Management Systems", "Prof. Partha Pratim Das", "10:00 am - 10:50 am"],
+              ["Modern Application Development - I", "Thejesh G N", "11:00 am - 11:50 am"],
+              ["Programming Concepts Using Java", "Madhavan Mukund", "11:50 am - 12:40 pm"],
+              ["Interval", "", "12-40 pm - 01:30 pm"],
+              ["System Commands", "Prof. Gandham Phanikumar", "01:30 pm - 02:20 pm"],
+              ["Machine Learning Foundations", "Harish Guruprasad Ramaswamy", "02:20 pm - 03:10 pm"],
+              ["Business Data Management", "Dr. G Venkatesh", "03:10 pm - 04:00 pm"],
+              ["Tools in Data Science", "S. Anand", "04:00 pm - 04:50 pm"]
+    ],
+
+    "Saturday": [
+              ["Data Structures and Algorithms", "Madhavan Mukund", "09:10 am - 10:00 am"],
+              ["Database Management Systems", "Prof. Partha Pratim Das", "10:00 am - 10:50 am"],
+              ["Modern Application Development - I", "Thejesh G N", "11:00 am - 11:50 am"],
+              ["Programming Concepts Using Java", "Madhavan Mukund", "11:50 am - 12:40 pm"],
+              ["Interval", "", "12-40 pm - 01:30 pm"],
+              ["System Commands", "Prof. Gandham Phanikumar", "01:30 pm - 02:20 pm"],
+              ["Machine Learning Foundations", "Harish Guruprasad Ramaswamy", "02:20 pm - 03:10 pm"],
+              ["Business Data Management", "Dr. G Venkatesh", "03:10 pm - 04:00 pm"],
+              ["Tools in Data Science", "S. Anand", "04:00 pm - 04:50 pm"]
+    ]
+}

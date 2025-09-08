@@ -1,0 +1,62 @@
+{
+    "Monday": [
+              ["Data Structures and Algorithms", "Bachelor Of Technology", "Computer Science & Engineering", "2", "4", "B", "09:10 am - 10:00 am"],
+              ["Modern Application Development - I", "Masters in Computer Applications", "Software Development", "1", "2", "A", "11:00 am - 11:50 am"],
+              ["Programming Concepts Using Java", "Bachelor Of Technology", "Computer Science & Engineering", "2", "4", "A", "11:50 am - 12:40 pm"],
+              ["Interval", "", "", "", "", "", "12-40 pm - 01:30 pm"],
+              ["System Commands", "Bachelor Of Technology", "Data Science", "2", "4", "F", "01:30 pm - 02:20 pm"],
+              ["Machine Learning Foundations", "Masters in Computer Applications", "Cloud Computing", "2", "4", "B", "02:20 pm - 03:10 pm"],
+              ["Tools in Data Science", "Bachelor Of Technology", "Artificial Intelligence & Machine Learning", "2", "4", "C", "04:00 pm - 04:50 pm"]
+    ],
+
+    "Tuesday": [
+              ["Data Structures and Algorithms", "Bachelor Of Technology", "Computer Science & Engineering", "2", "4", "B", "09:10 am - 10:00 am"],
+              ["Modern Application Development - I", "Masters in Computer Applications", "Software Development", "1", "2", "A", "11:00 am - 11:50 am"],
+              ["Programming Concepts Using Java", "Bachelor Of Technology", "Computer Science & Engineering", "2", "4", "A", "11:50 am - 12:40 pm"],
+              ["Interval", "", "", "", "", "", "12-40 pm - 01:30 pm"],
+              ["System Commands", "Bachelor Of Technology", "Data Science", "2", "4", "F", "01:30 pm - 02:20 pm"],
+              ["Machine Learning Foundations", "Masters in Computer Applications", "Cloud Computing", "2", "4", "B", "02:20 pm - 03:10 pm"],
+              ["Tools in Data Science", "Bachelor Of Technology", "Artificial Intelligence & Machine Learning", "2", "4", "C", "03:10 pm - 04:00 pm"],
+              ["Tools in Data Science", "Bachelor Of Technology", "Artificial Intelligence & Machine Learning", "2", "4", "C", "04:00 pm - 04:50 pm"]
+    ],
+
+    "Wednesday": [
+              ["Data Structures and Algorithms", "Bachelor Of Technology", "Computer Science & Engineering", "2", "4", "B", "09:10 am - 10:00 am"],
+              ["Modern Application Development - I", "Masters in Computer Applications", "Software Development", "1", "2", "A", "11:00 am - 11:50 am"],
+              ["Programming Concepts Using Java", "Bachelor Of Technology", "Computer Science & Engineering", "2", "4", "A", "11:50 am - 12:40 pm"],
+              ["Interval", "", "", "", "", "", "12-40 pm - 01:30 pm"],
+              ["System Commands", "Bachelor Of Technology", "Data Science", "2", "4", "F", "01:30 pm - 02:20 pm"],
+              ["Machine Learning Foundations", "Masters in Computer Applications", "Cloud Computing", "2", "4", "B", "02:20 pm - 03:10 pm"],
+              ["Tools in Data Science", "Bachelor Of Technology", "Artificial Intelligence & Machine Learning", "2", "4", "C", "04:00 pm - 04:50 pm"]
+    ],
+
+    "Thursday": [
+              ["Data Structures and Algorithms", "Bachelor Of Technology", "Computer Science & Engineering", "2", "4", "B", "09:10 am - 10:00 am"],
+              ["Modern Application Development - I", "Masters in Computer Applications", "Software Development", "1", "2", "A", "11:00 am - 11:50 am"],
+              ["Programming Concepts Using Java", "Bachelor Of Technology", "Computer Science & Engineering", "2", "4", "A", "11:50 am - 12:40 pm"],
+              ["Interval", "", "", "", "", "", "12-40 pm - 01:30 pm"],
+              ["System Commands", "Bachelor Of Technology", "Data Science", "2", "4", "F", "01:30 pm - 02:20 pm"],
+              ["Machine Learning Foundations", "Masters in Computer Applications", "Cloud Computing", "2", "4", "B", "02:20 pm - 03:10 pm"],
+              ["Tools in Data Science", "Bachelor Of Technology", "Artificial Intelligence & Machine Learning", "2", "4", "C", "04:00 pm - 04:50 pm"]
+    ],
+
+    "Friday": [
+              ["Data Structures and Algorithms", "Bachelor Of Technology", "Computer Science & Engineering", "2", "4", "B", "09:10 am - 10:00 am"],
+              ["Modern Application Development - I", "Masters in Computer Applications", "Software Development", "1", "2", "A", "11:00 am - 11:50 am"],
+              ["Programming Concepts Using Java", "Bachelor Of Technology", "Computer Science & Engineering", "2", "4", "A", "11:50 am - 12:40 pm"],
+              ["Interval", "", "", "", "", "", "12-40 pm - 01:30 pm"],
+              ["System Commands", "Bachelor Of Technology", "Data Science", "2", "4", "F", "01:30 pm - 02:20 pm"],
+              ["Machine Learning Foundations", "Masters in Computer Applications", "Cloud Computing", "2", "4", "B", "02:20 pm - 03:10 pm"],
+              ["Tools in Data Science", "Bachelor Of Technology", "Artificial Intelligence & Machine Learning", "2", "4", "C", "04:00 pm - 04:50 pm"]
+            ],
+
+    "Saturday": [
+              ["Data Structures and Algorithms", "Bachelor Of Technology", "Computer Science & Engineering", "2", "4", "B", "09:10 am - 10:00 am"],
+              ["Modern Application Development - I", "Masters in Computer Applications", "Software Development", "1", "2", "A", "11:00 am - 11:50 am"],
+              ["Programming Concepts Using Java", "Bachelor Of Technology", "Computer Science & Engineering", "2", "4", "A", "11:50 am - 12:40 pm"],
+              ["Interval", "", "", "", "", "", "12-40 pm - 01:30 pm"],
+              ["System Commands", "Bachelor Of Technology", "Data Science", "2", "4", "F", "01:30 pm - 02:20 pm"],
+              ["Machine Learning Foundations", "Masters in Computer Applications", "Cloud Computing", "2", "4", "B", "02:20 pm - 03:10 pm"],
+              ["Tools in Data Science", "Bachelor Of Technology", "Artificial Intelligence & Machine Learning", "2", "4", "C", "04:00 pm - 04:50 pm"]
+            ]
+}

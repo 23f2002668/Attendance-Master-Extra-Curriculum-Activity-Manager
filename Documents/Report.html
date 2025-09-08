@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Attendance Report</title>
+	<style>
+		h1, h2 {
+			color: maroon;
+			text-align: center;
+			font-family: Courier;
+		}
+		#studentDetails, #attendanceDetails, #subjectsAttendance {
+			margin-top: 10vh;
+			margin-left: 3vw;
+			margin-right: 3vw;
+		}
+		strong {
+			font-size: 1.45em;
+			color: maroon;
+			font-family: Courier;
+		}
+		p {
+			font-size: 1.2em;
+			font-family: Courier;
+		}
+		span {
+			color: blue;
+		}
+		table {
+			border: 1px solid black;
+			border-collapse: collapse;
+			width: 70vw;
+			margin-top: 5vh;
+		}
+		tr {
+			width: 50%;
+			border: 1px solid black;
+			padding: 8px;
+			text-align: center;
+			font-family: Courier;
+		}
+		th {
+			width: 50%;
+			border: 1px solid black;
+			padding: 8px;
+			text-align: center;
+			font-size: 1.35em;
+			background-color: lightgray;
+		}
+		td {
+			width: 50%;
+			border: 1px solid black;
+			padding: 8px;
+			text-align: justify;
+			font-size: 1.25em;
+		}
+		tr:nth-child(odd) {
+			background-color: lightgray;
+		}
+		.heading {
+			margin-top: 5vh;
+		}
+		.subjectsTable {
+			width: 33.33%;
+		}
+	</style>
+        
+</head>
+<body>
+	<h1> Monthly Attendance Report </h1>
+	<h2> Month - May </h2>
+	<h2> Date - 28/05/2025 </h2>
+        
+	<div id="studentDetails">
+		<p><strong> Student Details </strong></p>
+		<p> Student Name : <span>Shahzada Shan</span> </p>
+		<p> Father's Name : <span>Mohammad Ilyas Shah</span> </p>
+		<p> Mother's Name : <span>Shahjahan</span> </p>
+		<p> Date Of Birth : <span>13-01-2006</span> </p>
+		<p> Gender : <span>Male</span> </p>
+		<p> Course : <span>Bachelor Of Technology</span> </p>
+		<p> Department : <span>Computer Science & Engineering</span> </p>
+		<p> Year & Semester : <span>2 & 4</span> </p>
+		<p> Contact Number : <span>0009000801</span> </p>
+		<p> Email ID : <span>shahzadashan87@gmail.com</span> </p>
+	</div>
+        
+	<div id="attendanceDetails">
+		<p class="heading"><strong> Attendance Details </strong></p>
+		<p> The attendance details are given below : </p><br><br>
+		<strong class="heading" style="color: maroon;"> Overall Attendance of All Subjects Till Now </strong>
+		<table align="center">
+			<tr>
+				<th> Subjects </th>
+				<th> Attendance Rate </th>
+			</tr>
+			<tr>
+				<td> Data Structures and Algorithms </td>
+				<td style="text-align: center; color: blue;"> 44.444 % </td>
+			</tr>
+			<tr>
+				<td> Database Management Systems </td>
+				<td style="text-align: center; color: blue;"> 62.5 % </td>
+			</tr>
+			<tr>
+				<td> Modern Application Development - I </td>
+				<td style="text-align: center; color: blue;"> 33.333 % </td>
+			</tr>
+			<tr>
+				<td> Programming Concepts Using Java </td>
+				<td style="text-align: center; color: blue;"> 36.364 % </td>
+			</tr>
+			<tr>
+				<td> System Commands </td>
+				<td style="text-align: center; color: blue;"> 50.0 % </td>
+			</tr>
+			<tr>
+				<td> Machine Learning Foundations </td>
+				<td style="text-align: center; color: blue;"> 33.333 % </td>
+			</tr>
+			<tr>
+				<td> Business Data Management </td>
+				<td style="text-align: center; color: blue;"> 60.0 % </td>
+			</tr>
+		</table>
+		<img src="../static/images/Overall Subjects Attendance_bar.png" style="width: 55%; height: 55%; margin-top: 15vh; margin-left: 25%; margin-right: 25%;">
+	</div>
+        
+	<div id="subjectsAttendance">
+		<p class="heading"><strong> 1. Modern Application Development - I </strong></p><br>
+		<table align="center">
+			<tr>
+				<th class="subjectsTable"> Attendance </th>
+				<th class="subjectsTable"> Frequency </th>
+				<th class="subjectsTable"> Rate </th>
+			</tr>
+			<tr>
+				<td class="subjectsTable"> Present </td>
+				<td class="subjectsTable" style="text-align: center; color: blue;"> 4 </td>
+				<td class="subjectsTable" style="text-align: center; color: blue;"> 44.444 % </td>
+			</tr>
+			<tr>
+				<td class="subjectsTable"> Late </td>
+				<td class="subjectsTable" style="text-align: center; color: blue;"> 4 </td>
+				<td class="subjectsTable" style="text-align: center; color: blue;"> 62.5 % </td>
+			</tr>
+			<tr>
+				<td class="subjectsTable"> Leave </td>
+				<td class="subjectsTable" style="text-align: center; color: blue;"> 3 </td>
+				<td class="subjectsTable" style="text-align: center; color: blue;"> 62.5 % </td>
+			</tr>
+			<tr>
+				<td class="subjectsTable"> Absent </td>
+				<td class="subjectsTable" style="text-align: center; color: blue;"> 1 </td>
+				<td class="subjectsTable" style="text-align: center; color: blue;"> 62.5 % </td>
+			</tr>
+		</table>
+		<img src="../static/images/Modern Application Development - I Attendance_bar.png" style="width: 40%; height: 40%; margin-top: 15vh; margin-left: 4.5%; margin-right: 5%;">
+		<img src="../static/images/Modern Application Development - I Attendance_pie.png" style="width: 40%; height: 40%; margin-top: 15vh; margin-left: 5%; margin-right: 4.5%;">
+	</div>
+</body>
+</html>
+    

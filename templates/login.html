@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    
+    <style>
+        #Background{
+            /*background-color:#F5F5F5;*/
+            background-image: url("static/images/main-04.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            max-width: 100%;
+            height:100vh;
+            align-content: center;
+        }
+        
+        sup{
+            color:red;
+            font-size:1rem;
+        }
+        
+        #Header{
+            margin-top:auto;
+            margin-bottom:auto;
+            text-align:center;
+            font-size: 1.3em;
+            font-family: "Courier New", Courier, monospace;
+        }
+        
+        #logo, #Main {
+            flex: 1;
+            width: 50vw;
+        }
+        
+        #logo {
+            width: 40vw;
+            align-self: flex-start;
+            object-fit: cover;
+            object-position: center;
+            margin-top: auto;
+            margin-bottom: auto;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        img {
+            max-width: 100%;
+            max-height: 100vh;
+            margin-top: auto;
+            margin-bottom: auto;
+            border: 2px solid white;
+            object-fit: cover;
+        }
+        
+        #Main{
+            border: 2px solid white;
+            border-radius: 0.75rem;
+            background-color:white;
+            font-family: "Courier New", Courier, monospace;
+            width: 40vw;
+            height:90vh;
+            margin-top:auto;
+            margin-left: auto;
+            margin-right:auto;
+            margin-bottom:auto;
+            box-shadow: 0.75rem 0.95rem 0.25rem rgba(0, 0, 0, 0.2);
+        }
+        
+        #content {
+            height: 80vh;
+            margin-top: 5vh;
+            margin-bottom: 5vh;
+        }
+        
+        h3 {
+            margin-bottom: 8vh;
+        }
+        
+        .DataHeading{
+            
+            border-radius: 0.25em;
+            margin-top: 5vh;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.15em;
+            width: 74vw;
+            font-family: "Courier New", Courier, monospace;
+        }
+        
+        label{
+            margin-top: 0.1vh;
+            margin-left: 7%;
+            font-family: "Courier New", Courier, monospace;
+        }
+        
+        img {
+            width: 3.5%;
+            height: 3.5%;
+            padding: 0.8rem 0.5rem 0.5rem 1.5rem;
+        }
+        
+        input, select{
+            border:1px solid lightgray;
+            border-radius:0.25em;
+            background-image:linear-gradient(to top, white, #F8F8F8, #F5F5F5);
+            font-size:1.10em;
+            margin-right: 2.5%;
+            margin-top:1vh;
+            margin-bottom:1vh;
+            text-align:justify;
+            height:5.5vh;
+            width:42%;
+            padding-left: 1%;
+            padding-right: 1%;
+            font-family: "Courier New", Courier, monospace;
+            box-shadow: 0.5rem 0.75rem 0.35rem rgba(0, 0, 0, 0.2);
+        }
+        
+        #Password {
+            width: 36%;
+            margin-right: 0;
+        }
+        
+        span {
+            font-size: 1.5em;
+            margin-top: 1rem;
+            padding: 0.45rem 0.75rem 0.6rem 0.75rem;
+            border:1px solid lightgray;
+            border-radius:0.25em;
+            user-select: none;
+            cursor: pointer;
+            box-shadow: 0.5rem 0.75rem 0.35rem rgba(0, 0, 0, 0.2);
+            background-image:linear-gradient(to top, white, #F8F8F8, #F5F5F5);
+        }
+        
+        #Submit{
+            margin-left: 35%;
+            margin-right: auto;
+            margin-top: 8vh;
+            color:white;
+            border:1px solid #0066FF;
+            border-radius:0.5vh;
+            height:5vh;
+            width:25%;
+            font-size:1.5em;
+            background-image:linear-gradient(#6698FF, #1589FF, #157DEC, #306EFF, #2554C7);
+            box-shadow: 0px 4px 6px rgba(0, 0, 0.7, 0.7);
+        }
+        
+        .ForgotPassword {
+            margin-left: 2.5%;
+            margin-top: 10vh;
+            font-size:1.05em;
+            text-decoration:none;
+        }
+        
+        .ForgotPassword:hover, .Registeration:hover{
+            color: #0066FF;
+            font-size: 1.1em;
+        }
+        
+        .Registeration {
+            margin-left: 2.5%;
+            margin-top:3vh;
+            margin-bottom:auto;
+            font-size:1.05em;
+            text-decoration:none;
+        }
+    </style>
+</head>
+<body>
+    <form action="{{ url_for('login') }}" method="POST">
+        <div id="Background">
+            <div id="Main">
+                <div id="content">
+                    <div id="Header">
+                        <br>
+                        <h3>Log In To Your Account</h3>
+                    </div>
+                    
+                    <div class="DataHeading">
+                        <label for="UserName">Enter Username / Email<sup>*</sup></label><br>
+                        <img src="static/images/user.png" align="left">
+                        <input type="text" align="right" id="UserName" name="email" placeholder="Enter Email Here" autofocus required>
+                    </div>
+                    
+                    <div class="DataHeading">
+                        <label for="Password">Enter Password<sup>*</sup></label><br>
+                        <img src="static/images/password.png" align="left">
+                        <input type="password"  id="Password" name="password" placeholder="Enter Password Here" required>
+                        <span id="showPassword" onclick="showPassword()"> 👁️</span>
+                    </div>
+                    
+                    <div id="SubmitReset">
+                        <button type="submit" id="Submit">Submit</button>
+                    </div>
+                    
+                    <div class="ForgotPassword">
+                        <a href="/forgot_password" class="ForgotPassword">Forgot Password ?</a>
+                    </div>
+                    
+                    <div class="Registeration">
+                        <a href="/user_type" class="ForgotPassword">New User ? Register Here</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    
+    <script>
+        function showPassword() {
+            let password = document.getElementById("Password");
+            
+            if (password.type === "password") {
+                password.type = "text";
+            }
+            else {
+                password.type = "password";
+            }
+            
+        }
+    </script>
+</body>
+</html>

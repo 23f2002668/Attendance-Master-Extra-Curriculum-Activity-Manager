@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        #header {
+            z-index: 1000;
+            position: fixed;
+            display: flex;
+            padding: 1rem 2rem;
+            width: 100vw;
+            height: 12vh;
+            background-color: black;
+        }
+
+        .headerLinks, .login {
+            width: 80vw;
+            flex: 1;
+            color: white;
+        }
+
+        .logoImage {
+            width: auto;
+            height: 10vh;
+            object-fit: cover;
+            object-position: left;
+            padding: 0 0.25rem 1.5rem 0;
+        }
+
+        .headerLinks {
+            text-align: right;
+            height: 12vh;
+            flex: 3;
+            color: white;
+            display: flex;
+            margin-right: 0.01vw;
+            margin-top: 0;
+            margin-bottom: 0;
+            align-items: center;
+        }
+
+        .headerLinksLinkButton {
+            height: 12vh;
+            background-color: black;
+            margin-top: 0;
+            margin-bottom: 4vh;
+            margin-left: 2vw;
+            border: 1px solid black;
+            color: white;
+            font-size: 1.85rem;
+            font-family: "Courier New", Courier, monospace;
+        }
+
+        .headerLinksLinkButton:hover {
+            border-bottom: 0.25rem solid white;
+        }
+
+        .headerLinksLink {
+            text-decoration: none;
+            color: white;
+            font-size: 1.5rem;
+            font-stretch: condensed;
+            font-family: "Courier New", Courier, monospace;
+        }
+
+        .logout {
+            flex: 2;
+            height: 12vh;
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            color: white;
+        }
+        
+        .logoutButton, .homeButton, .dashboardButton {
+            background-color: #A52A2A;
+            border: 1px solid white;
+            border-radius: 0.5rem;
+            margin-right: 0.5rem;
+            height: 6vh;
+            margin-bottom: 4vh;
+            color: white;
+            width: 100%;
+            font-size: 1.35rem;
+            cursor: pointer;
+            padding: 0 0.5rem 0 0.5rem;
+            font-family: "Courier New", Courier, monospace;
+        }
+        
+        .logoutLink, .homeLink, .dashboardLink {
+            text-decoration: none;
+            color: white;
+            margin-right: 0.5rem;
+            height: 6vh;
+            margin-bottom: 4vh;
+            width: 25%;
+            padding: 0.001vw 0.001vw 0.001vw 0.001vw;
+            cursor: pointer;
+            font-family: "Courier New", Courier, monospace;
+        }
+
+        .logoutButton:hover, .homeButton:hover, .dashboardButton:hover {
+            background-color: #800020;
+        }
+
+        #main {
+            margin-top: 12vh;
+            text-align: left;
+            font-family: "Courier New", Courier, monospace;
+        }
+
+        .data {
+            margin: 2rem 2rem 2rem 2rem;
+            font-size: 1.25rem;
+            margin-top: 15vh;
+        }
+
+        label {
+            text-align: left;
+            color: #505050;
+            //margin-left: 0.25rem;
+        }
+
+        input {
+            width: 98%;
+            height: 4vh;
+            background-color: #F0F0F0;
+            border: 1px solid #E0E0E0;
+            border-radius: 0.25rem;
+            padding-left: 1%;
+            padding-right: 1%;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 1.1rem;
+            margin-top: 0.75vh;
+            margin-bottom: 3vh;
+        }
+
+        select {
+            background-color: #F0F0F0;
+            border: 1px solid #E0E0E0;
+            border-radius: 0.25rem;
+            width: 100%;
+            height: 5vh;
+            padding-left: 1%;
+            padding-right: 1%;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 1.1rem;
+            margin-top: 0.75vh;
+            margin-bottom: 3vh;
+        }
+
+        .dataInput {
+            height: 5vh;
+            background-color: #F0F0F0;
+            border: 1px solid #E0E0E0;
+            border-radius: 0.25rem;
+            padding: 0.75% 0.5rem 0.75% 0.5rem;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 1.25rem;
+            margin-top: 0.5vh;
+        }
+
+        #submit, #edit {
+            width: 25%;
+            height: 5vh;
+            border: 1px solid white;
+            border-radius: 0.25rem;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 5vh;
+            margin-left: 37.5%;
+            margin-right: 2.5vw;
+            color: white;
+            box-shadow: 0.5rem 0.75rem 0.35rem rgba(0, 0, 0, 0.2);
+            background-image: linear-gradient(to right, #339900, #339933);
+        }
+
+        #submit {
+            display: none;
+        }
+
+        #submit:hover, #edit:hover {
+            cursor: pointer;
+        }
+        
+        #Footer{
+            text-align:left;
+            color: black;
+            margin-left: 2.5vw;
+            font-size:1em;
+            font-family: "Courier New", Courier, monospace;
+        }
+
+    </style>
+</head>
+
+<body>
+<form action="{{url_for('student_profile')}}" method="POST">
+    <div id="background">
+        <div id="header">
+            <div class="headerLinks">
+                <img class="logoImage" src="static/images/logo-02.png" alt="Logo">
+                <button class="headerLinksLinkButton"> Student's Profile </button>
+            </div>
+            <div class="logout">
+                <a class="homeLink" href="/"><button type="button" class="homeButton"> Home </button></a>
+                <a class="dashboardLink" href="/student_dashboard"><button type="button" class="dashboardButton"> Dashboard </button></a>
+                <a class="logoutLink" href="/login"><button type="button" class="logoutButton"> Logout </button></a>
+            </div>
+        </div><br>
+
+        <div id="main">
+            <div class="data">
+                <label for="name"> Student Name </label>
+                <br>
+                <input type="text" class="student" id="name" name="name" value="{{ data[0] }}" readonly>
+
+                <label for="fname"> Father's Name </label>
+                <br>
+                <input type="text" class="student" id="fname" name="fname" value="{{ data[1] }}" readonly>
+
+                <label for="mname"> Mother's Name  </label>
+                <br>
+                <input type="text" class="student" id="mname" name="mname" value="{{ data[2] }}" readonly>
+
+                <label for="gender"> Gender (Male / Female / Transgender / Prefer not to mention) </label>
+                <br>
+                <input type="text" class="student" id="gender" name="gender" value="{{ data[3] }}" readonly>
+
+                <label for="dob"> Date of Birth (D.O.B.) </label>
+                <br>
+                <input type="date" class="student" id="dob" name="dob" value="{{ data[4] }}" readonly>
+
+                <label for="course"> Course </label>
+                <br>
+                <input type="text" class="student" id="course" name="course" value="{{ data[5] }}" readonly>
+
+                <label for="dept"> Department </label>
+                <br>
+                <input type="text" class="student" id="dept" name="dept" value="{{ data[6] }}" readonly>
+
+                <label for="year"> Year (1, 2, 3, etc.) </label>
+                <br>
+                <input type="text" class="student" id="year" name="year" value="{{ data[7] }}" readonly>
+
+                <label for="sem"> Semester (1, 2, 3, etc.) </label>
+                <br>
+                <input type="text" class="student" id="sem" name="sem" value="{{ data[8] }}" readonly>
+
+                <label for="sec"> Section </label>
+                <br>
+                <input type="text" class="student" id="sec" name="sec" value="{{ data[9] }}" readonly>
+
+                <label for="roll"> Roll No. </label>
+                <br>
+                <input type="text" class="student" id="roll" name="roll" value="{{ data[10] }}" readonly>
+
+                <label for="cont"> Contact No. </label>
+                <br>
+                <input type="tel" class="student" id="cont" name="cont" value="{{ data[11] }}">
+
+                <label for="email"> Email ID </label>
+                <br>
+                <input type="email" class="student" id="email" name="email" value="{{ data[12] }}" readonly>
+            </div>
+
+            <button type="button" id="edit" onclick="Edit(event)"> Edit </button>
+            <button type="submit" id="submit"> Submit </button>
+        </div>
+        
+        <div id="Footer">
+            <p> Shahzada Moon | Copyright, 2025 </p><br>
+        </div>
+    </div>
+
+    <script>
+    function Edit(event) {
+        event.preventDefault(); // 🛑 prevent form submission
+        /*
+        let spans = document.getElementsByClassName("dataInput");
+        let students = document.getElementsByClassName("student");
+
+        for (let i = 0; i < spans.length; i++) {
+            spans[i].style.display = "none";
+        }
+
+        for (let i = 0; i < students.length; i++){
+            students[i].type="text";
+            students[i].style.display = "inline-block";
+        }
+        */
+        document.getElementById("name").removeAttribute('readonly')
+        document.getElementById("fname").removeAttribute('readonly');
+        document.getElementById("mname").removeAttribute('readonly');
+        document.getElementById("gender").removeAttribute('readonly');
+        document.getElementById("dob").removeAttribute('readonly');
+        document.getElementById("course").removeAttribute('readonly');
+        document.getElementById("dept").removeAttribute('readonly')
+        document.getElementById("year").removeAttribute('readonly')
+        document.getElementById("sem").removeAttribute('readonly');
+        document.getElementById("sec").removeAttribute('readonly');
+        document.getElementById("cont").removeAttribute('readonly');
+        
+        document.getElementById("submit").style.display = "inline-block";
+        document.getElementById("edit").style.display = "none";
+
+        document.getElementById("name").focus();
+    }
+</script>
+</form>
+</body>
+</html>

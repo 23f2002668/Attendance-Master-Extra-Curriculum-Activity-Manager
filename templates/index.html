@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #background {
+            width: 100vw;
+            height: 100vh;
+        }
+        
+        #header {
+            z-index: 1000;
+            position: fixed;
+            display: flex;
+            padding: 1rem 2rem;
+            width: 100vw;
+            height: 12vh;
+            background-color: black;
+        }
+        
+        .headerLinks, .login {
+            width: 80vw;
+            flex: 1;
+            color: white;
+        }
+        
+        .logoImage {
+            width: auto;
+            height: 10vh;
+            object-fit: cover;
+            object-position: left;
+            padding: 0 0.25rem 1.5rem 0;
+        }
+        
+        .headerLinks {
+            text-align: right;
+            height: 12vh;
+            flex: 3;
+            color: white;
+            display: flex;
+            margin-right: 0.01vw;
+            margin-top: 0;
+            margin-bottom: 0;
+            align-items: center;
+        }
+        
+        .headerLinksLinkButton {
+            height: 12vh;
+            background-color: black;
+            margin-top: 0;
+            margin-bottom: 4vh;
+            margin-left: 2vw;
+            border: 1px solid black;
+        }
+        
+        .headerLinksLinkButton:hover {
+            border-bottom: 0.25rem solid white;
+        }
+        
+        .headerLinksLink {
+            text-decoration: none;
+            color: white;
+            font-size: 1.5rem;
+            font-stretch: condensed;
+            font-family: "Courier New", Courier, monospace;
+        }
+        
+        .login {
+            flex: 2;
+            height: 12vh;
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            color: white;
+        }
+        
+        .accountLinkButton {
+            background-color: #A52A2A;
+            border: 1px solid white;
+            border-radius: 0.5rem;
+            margin-right: 0.5rem;
+            height: 6vh;
+            margin-bottom: 4vh;
+        }
+        
+        .accountLink{
+            text-decoration: none;
+            color: white;
+            padding: 0.001vw 1.1vw;
+            font-size: 1.3rem;
+            font-family: "Courier New", Courier, monospace;
+        }
+        
+        .accountLinkButton:hover{
+            background-color: #800020;
+        }
+        
+        #main{
+            width: 100vw;
+            height: 100vh;
+            z-index: 800;
+            overflow-y: scroll;
+            margin-top: 9vh;
+            background-color: black;
+            color: white;
+        }
+        
+        #mainImage {
+            width: 100vw;
+            height: auto;
+            object-fit: cover;
+            object-position: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .mainText {
+            text-align: justify;
+            margin: 0 3rem 0 3rem;
+            font-size: 1.2rem;
+            font-family: "Courier New", Courier, monospace;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        h2 {
+            text-align: left;
+        }
+        
+        h3 {
+            display: inline;
+        }
+        
+        #inline-content {
+            margin-left: 1rem;
+        }
+        
+        #mail, address {
+            text-align: center;
+        }
+        
+        #Footer{
+            text-align:left;
+            color: white;
+            margin-left: 3.5vw;
+            font-size:1em;
+            font-family: "Courier New", Courier, monospace;
+        }
+    
+    </style>
+</head>
+<body>
+<div id="background">
+    
+    <div id="header">
+        <div class="headerLinks">
+            <img class="logoImage" src="{{url_for('static', filename='images/logo-02.png')}}" alt="Logo">
+            <button class="headerLinksLinkButton"><a class="headerLinksLink" href="#"> Home </a></button>
+            <button class="headerLinksLinkButton"><a class="headerLinksLink" href="#AboutMe"> About Me </a></button>
+            <button class="headerLinksLinkButton"><a class="headerLinksLink" href="#AboutApplication"> About Application </a></button>
+            <button class="headerLinksLinkButton"><a class="headerLinksLink" href="#ContactMe"> Contact Me </a></button>
+        </div>
+        <div class="login">
+            <button class="accountLinkButton"><a class="accountLink" href="/user_type"> Create Account </a></button>
+            <button class="accountLinkButton"><a class="accountLink" href="/login"> Login </a></button>
+        </div>
+    
+    </div><br>
+    
+    <div id="main">
+        <img id="mainImage" src="static/images/main-01.jpeg" alt="Application Image">
+        
+        <div class="mainText">
+            <div id="AboutMe">
+                <br><br><br><br><br>
+                <h1> About Me </h1><br>
+                <p> &nbsp; Hello! My name is Shahzada Moon, and I’m a 21-year-old student with a deep passion for technology and data. Currently, I’m pursuing two challenging yet exciting academic paths. I am enrolled in the Bachelor of Science (B.S.) in Data Science program at IIT Madras, one of India’s premier institutions. I am currently at the Diploma level in this program, gaining foundational knowledge and skills in data analysis, machine learning, and statistics. Alongside, I am also pursuing a Bachelor of Technology (B.Tech) degree at R.D. Engineering College, Ghaziabad, where I am currently in my 2nd year. This combination of courses allows me to deepen my understanding of both theoretical and practical aspects of technology, particularly in the fields of data science and engineering. </p><br>
+                <h2> Academic Journey and Interests </h2><br>
+                <p> &nbsp; My academic journey has always been driven by a natural curiosity about how data can be harnessed to solve real-world problems. Data Science, being one of the most dynamic and rapidly growing fields, offers endless possibilities to innovate and impact various industries. At IIT Madras, I’m learning how to extract meaningful insights from large datasets, develop predictive models, and apply machine learning techniques to solve complex problems. This program is shaping my understanding of core subjects like statistics, programming, and machine learning algorithms. </p><br>
+                <p> &nbsp; At the same time, pursuing a B.Tech degree at R.D. Engineering College gives me a solid foundation in computer science and engineering. This allows me to bridge the gap between theoretical learning and practical application. By combining both degrees, I hope to be well-prepared for a career that blends the power of data science with cutting-edge technology, contributing to fields such as artificial intelligence, big data analytics, and automation. </p><br>
+                <h2> Skills and Achievements </h2><br>
+                <p> &nbsp; I have always been keen on developing my skills outside of the classroom as well. Over the years, I’ve become proficient in programming languages such as Python, C and now learning Java, which are essential tools in both data science and engineering. I have also worked with a range of data analysis tools like Excel and SQL, and I’m actively learning more about cloud computing platforms and frameworks. My ability to solve problems, coupled with strong analytical thinking, has helped me perform well in various academic projects and competitions. </p><br>
+                <p> &nbsp; Beyond academics, I am deeply interested in extracurricular activities that help me grow as an individual and contribute to society. Whether it’s participating in hackathons, data science competitions, or volunteering for tech-related events, I always seek opportunities to learn from others and share my knowledge. </p><br>
+                <h2> Personal Life and Future Goals </h2><br>
+                <p> &nbsp; I live in Ghaziabad, Uttar Pradesh, a city just outside of the national capital, Delhi. Growing up here has taught me the importance of perseverance and hard work. I believe in setting ambitious goals and pushing myself to achieve them. In the future, I aim to specialize in Artificial Intelligence or Big Data Analytics, areas I am particularly passionate about. I envision working in a tech-driven organization or a startup where I can apply my skills to build data-driven solutions that make a tangible impact on businesses and society. </p><br>
+                <p> &nbsp; As I continue my academic journey, I am excited about the endless opportunities that lie ahead, and I’m committed to using my knowledge and skills to drive innovation in the technology sector. </p><br>
+                <p> Thank you for taking the time to read about me. </p>
+            </div>
+            
+            <div id="AboutApplication">
+                <br><br><br><hr><br><br><br>
+                <h1> About 'My Attendance' Application </h1><br>
+                <p> The 'My Attendance' application is a digital solution designed to simplify, automate, and streamline attendance tracking for students, employees, or members of any organization. Whether in an educational institution, a workplace, or a training center, attendance management plays a crucial role in ensuring accountability, performance tracking, and time management. This application offers an intuitive and efficient way to record, monitor, and analyze attendance data in real time. </p><br>
+                
+                <h2> Core Features </h2><br>
+                <p> 'My Attendance' provides users with a personalized dashboard where they can view their attendance records, upcoming schedules, leave history, and notifications. For administrators and educators, it offers tools to take attendance quickly—either manually or through automated means like QR code scanning or biometric integration. The application supports generating detailed reports, sending reminders for absentees, and exporting attendance logs for analysis or compliance purposes. </p><br>
+                <p>The system is built with flexibility in mind. It can be accessed via web or mobile platforms, making it convenient for both on-site and remote environments. Role-based access ensures that users only see information relevant to them, enhancing data privacy and usability.<br><br>
+                
+                <h2> Why 'My Attendance' Is Important </h2><br>
+                <div id="inline-content">
+                    <h3> 1. Accuracy and Transparency : </h3> Manual attendance methods are prone to errors, manipulations, and inefficiencies. 'My Attendance' eliminates these problems by providing a secure and automated way of tracking presence. With accurate data, students and employees are held accountable, and institutions can ensure fair policy enforcement. <br><br>
+                    <h3> 2. Time-Saving and Efficient : </h3> Taking attendance manually can be time-consuming, especially in large groups. The application reduces this process to just a few seconds, allowing educators and managers to focus more on productive tasks rather than administrative burdens. <br><br>
+                    <h3> 3. Real-Time Monitoring and Alerts : </h3> With real-time updates, supervisors and students can be instantly informed about attendance issues. Early warnings about absenteeism help prevent long-term disengagement or performance drops. <br><br>
+                    <h3> 4. Performance and Compliance Insights : </h3> Institutions can use attendance data to analyze patterns and performance. It also helps in complying with regulations or academic requirements that mandate a minimum level of participation. <br><br>
+                    <h3> 5. Improved Communication : </h3> Through built-in notifications, alerts, and reminders, the application facilitates better communication between stakeholders. Students can be notified of their attendance percentage, while managers can be alerted about irregularities in their team’s presence. <br><br>
+                    <h3> 6. Environmentally Friendly : </h3> Replacing paper registers with a digital system contributes to sustainability. It also reduces the risk of data loss due to physical damage or misplacement. <br>
+                </div>
+            </div>
+            
+            <div id="ContactMe">
+                <br><br><br><hr><br><br><br>
+                <h1> Contact Me </h1><br>
+                <p id="mail"><b>Email Id : &nbsp; </b><a href = "mailto:23f2002668@ds.study.iitm.ac.in" style = "text-decoration : None; color : white;"> 23f2002668@ds.study.iitm.ac.in </a></p><br>
+                <address> <b>Address : &nbsp; </b> Muradnagar, Ghaziabad, Uttar Pradesh - 201206, India</address>
+            </div>
+            <br><br><br><hr><br><br>
+        </div>
+        
+        <div id="Footer">
+            <p> Shahzada Moon | Copyright, 2025 </p><br>
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>

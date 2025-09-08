@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attendance Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #background {
+            /*background-image: url("static/images/background-08.jpeg");
+            background-repeat: no-repeat;
+            background-size: cover;*/
+            background-color: #F0F0F0;
+            min-height: 100vh;
+            width: 100vw;
+        }
+        
+        #header {
+            z-index: 1000;
+            position: fixed;
+            display: flex;
+            padding: 1rem 2rem;
+            width: 100vw;
+            height: 12vh;
+            background-color: black;
+        }
+        
+        .headerLinks, .login {
+            width: 80vw;
+            flex: 1;
+            color: white;
+        }
+        
+        .logoImage {
+            width: auto;
+            height: 10vh;
+            object-fit: cover;
+            object-position: left;
+            padding: 0 0.25rem 1.5rem 0;
+        }
+        
+        .headerLinks {
+            text-align: right;
+            height: 12vh;
+            flex: 3;
+            color: white;
+            display: flex;
+            margin-right: 0.01vw;
+            margin-top: 0;
+            margin-bottom: 0;
+            align-items: center;
+        }
+        
+        .headerLinksLinkButton {
+            height: 12vh;
+            background-color: black;
+            margin-top: 0;
+            margin-bottom: 4vh;
+            margin-left: 2vw;
+            border: 1px solid black;
+            color: white;
+            font-size: 1.85rem;
+            font-family: "Courier New", Courier, monospace;
+        }
+        
+        .headerLinksLinkButton:hover {
+            border-bottom: 0.25rem solid white;
+        }
+        
+        .headerLinksLink {
+            text-decoration: none;
+            color: white;
+            font-size: 1.5rem;
+            font-stretch: condensed;
+            font-family: "Courier New", Courier, monospace;
+        }
+        
+        .logout {
+            flex: 2;
+            height: 12vh;
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            color: white;
+        }
+        
+        .logoutButton, .homeButton, .dashboardButton {
+            background-color: #A52A2A;
+            border: 1px solid white;
+            border-radius: 0.5rem;
+            margin-right: 0.5rem;
+            height: 6vh;
+            margin-bottom: 4vh;
+            color: white;
+            width: 100%;
+            font-size: 1.35rem;
+            cursor: pointer;
+            padding: 0 0.5rem 0 0.5rem;
+            font-family: "Courier New", Courier, monospace;
+        }
+        
+        .logoutLink, .homeLink, .dashboardLink {
+            text-decoration: none;
+            color: white;
+            margin-right: 0.5rem;
+            height: 6vh;
+            margin-bottom: 4vh;
+            width: 25%;
+            padding: 0.001vw 0.001vw 0.001vw 0.001vw;
+            cursor: pointer;
+            font-family: "Courier New", Courier, monospace;
+        }
+        
+        .logoutButton:hover, .homeButton:hover, .dashboardButton:hover {
+            background-color: #800020;
+        }
+        
+        #content {
+            width: 100vw;
+            min-height: 70vh;  <!-- Height = 100 - 13 - 5 - 2 - 5 = 70vh -->
+            color: white;
+            text-align: center;
+            margin-top: 13vh;
+            margin-bottom: 5vh;
+        }
+        
+        h1 {
+            margin-bottom: 5vh;
+            color: black;
+            font-family: "Courier New", Courier, monospace;
+        }
+        
+        table {
+            border: 2px solid black;
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 95%;
+            height: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        th {
+            border: 1px solid black;
+            padding: 1rem 1rem 1rem 1rem;
+            text-align: center;
+            font-size: 1.75rem;
+            font-family: "Courier New", Courier, monospace;
+            background-color: orange;
+            color: white;
+        }
+        
+        td {
+            border: 1px solid black;
+            padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+            font-size: 1.25rem;
+            font-family: "Courier New", Courier, monospace;
+        }
+        
+        tr:nth-child(odd) {
+            background-color: white;
+            color: black;
+        }
+        
+        tr:nth-child(even) {
+            background-color: lightgray;
+            color: black;
+        }
+        
+        .images {
+            width: 43vw;
+            background-color: #F0F0F0;
+            border: 1px solid black;
+            padding: 2rem 2rem 2rem 2rem;
+            margin-left: 1.5vw;
+            margin-right: 1.5vw;
+        }
+
+        select {
+            width: 90%;
+            height: 5vh;
+            color: white;
+            font-size: 1.5rem;
+            background-color: lightseagreen;
+            text-align: center;
+            font-family: "Courier New", Courier, monospace;
+            margin-bottom: 5vh;
+        }
+        
+        #Footer{
+            text-align:left;
+            color: black;
+            margin-left: 2.5vw;
+            margin-top: 5vh;
+            margin-bottom: 1vh;
+            font-size:1em;
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+
+<div id="background">
+    <div id="header">
+        <div class="headerLinks">
+            <img class="logoImage" src="static/images/logo-02.png" alt="Logo">
+            <button class="headerLinksLinkButton"> Attendance Summary </button>
+        </div>
+        <div class="logout">
+            <a class="homeLink" href="/"><button type="button" class="homeButton"> Home </button></a>
+            <a class="dashboardLink" href="/{{type}}_dashboard"><button type="button" class="dashboardButton"> Dashboard </button></a>
+            <a class="logoutLink" href="/login"><button type="button" class="logoutButton"> Logout </button></a>
+        </div>
+    
+    </div><br>
+    
+    <div id="content">
+        <select id="attendance" onchange="image()">
+            {% for img in imgNames %}
+                {% if img != "" %}
+                    <option value="{{img}}" id="{{img}}"> {{img}} Attendance Summary </option>
+                {% endif %}
+            {% endfor %}
+        </select>
+        
+        {% for img in imgNames %}
+            <div id="{{img}}Img" style="display: none;">
+                {% if img == "Overall Subjects" %}
+                    <img src="static/images/{{img}} Attendance_bar.png" class="images" alt="Subjects-Wise Attendance Image">
+                {% else %}
+                    <img src="static/images/{{img}} Attendance_bar.png" class="images" alt="Subjects-Wise Attendance Image">
+                    <img src="static/images/{{img}} Attendance_pie.png" class="images" alt="Subjects-Wise Attendance Image"">
+                {% endif %}
+            </div>
+        {% endfor %}
+        
+        <br>
+        
+        <div id="Footer">
+            <p> Shahzada Moon | Copyright, 2025 </p><br>
+        </div>
+    </div>
+
+    <script>
+        function image() {
+            let value = document.getElementById("attendance").value;
+
+            const allImages = document.querySelectorAll("div[id$='Img']");
+            allImages.forEach(img => {
+                img.style.display = "none";
+            });
+            let targetImage = document.getElementById(value + "Img");
+            
+            if (targetImage){
+                console.log(targetImage);
+                targetImage.style.display="inline-block";
+            }
+        }
+        
+        window.onload = image;
+    </script>
+</div>
+</body>
+</html>

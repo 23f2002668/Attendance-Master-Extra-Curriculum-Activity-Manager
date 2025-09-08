@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Take Attendance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #background {
+            background-color: #f6cf92;
+            min-height: 100vh;
+            width: 100vw;
+        }
+        
+        #header {
+            z-index: 1000;
+            position: fixed;
+            display: flex;
+            padding: 1rem 2rem;
+            width: 100vw;
+            height: 12vh;
+            background-color: black;
+        }
+        
+        .headerLinks, .login {
+            width: 80vw;
+            flex: 1;
+            color: white;
+        }
+        
+        .logoImage {
+            width: auto;
+            height: 10vh;
+            object-fit: cover;
+            object-position: left;
+            padding: 0 0.25rem 1.5rem 0;
+        }
+        
+        .headerLinks {
+            text-align: right;
+            height: 12vh;
+            flex: 3;
+            color: white;
+            display: flex;
+            margin-right: 0.01vw;
+            margin-top: 0;
+            margin-bottom: 0;
+            align-items: center;
+        }
+        
+        .headerLinksLinkButton {
+            height: 12vh;
+            background-color: black;
+            margin-top: 0;
+            margin-bottom: 4vh;
+            margin-left: 2vw;
+            border: 1px solid black;
+            color: white;
+            font-size: 1.85rem;
+            font-family: "Courier New", Courier, monospace;
+        }
+        
+        .headerLinksLinkButton:hover {
+            border-bottom: 0.25rem solid white;
+        }
+        
+        .headerLinksLink {
+            text-decoration: none;
+            color: white;
+            font-size: 1.5rem;
+            font-stretch: condensed;
+            font-family: "Courier New", Courier, monospace;
+        }
+        
+        .logout {
+            flex: 2;
+            height: 12vh;
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            color: white;
+        }
+        
+        .logoutButton, .homeButton, .dashboardButton {
+            background-color: #A52A2A;
+            border: 1px solid white;
+            border-radius: 0.5rem;
+            margin-right: 0.5rem;
+            height: 6vh;
+            margin-bottom: 4vh;
+            color: white;
+            width: 100%;
+            font-size: 1.35rem;
+            cursor: pointer;
+            padding: 0 0.5rem 0 0.5rem;
+            font-family: "Courier New", Courier, monospace;
+        }
+        
+        .logoutLink, .homeLink, .dashboardLink {
+            text-decoration: none;
+            color: white;
+            margin-right: 0.5rem;
+            height: 6vh;
+            margin-bottom: 4vh;
+            width: 25%;
+            padding: 0.001vw 0.001vw 0.001vw 0.001vw;
+            cursor: pointer;
+            font-family: "Courier New", Courier, monospace;
+        }
+        
+        .logoutButton:hover, .homeButton:hover, .dashboardButton:hover {
+            background-color: #800020;
+        }
+        
+        #content {
+            margin-top: 15vh;
+            width: 100vw;
+            min-height: 78vh;  <!-- 100 - 15 (margin-top) - 2 (2-Br) - x (content-height) = Space for footer  ==>  100vh - 18vh - 2vh - x = 5vh  ==>  x = 78vh -->
+            color: white;
+            text-align: center;
+            margin-bottom: 5vh;
+        }
+        
+        table {
+            border: 2px solid black;
+            border-radius: 10px;
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 95%;
+            height: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        th {
+            border: 1px solid black;
+            padding: 1rem 1rem 1rem 1rem;
+            text-align: center;
+            font-size: 1.75rem;
+            font-family: "Courier New", Courier, monospace;
+            background-color: orange;
+            color: white;
+        }
+        
+        td {
+            border: 1px solid black;
+            padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+            font-size: 1.25rem;
+            font-family: "Courier New", Courier, monospace;
+        }
+        
+        tr:nth-child(odd) {
+            background-color: white;
+            color: black;
+        }
+        
+        tr:nth-child(even) {
+            background-color: lightgray;
+            color: black;
+        }
+        
+        select {
+            width: 31%;
+            height: 5vh;
+            color: white;
+            font-size: 1.5rem;
+            background-color: lightseagreen;
+            text-align: center;
+            font-family: "Courier New", Courier, monospace;
+            margin-left: 0.35%;
+            margin-right: 0.35%;
+            margin-bottom: 3vh;
+        }
+        
+        .accept {
+            width: 80%;
+            height: 5vh;
+            border: 0.1rem solid white;
+            border-radius: 0.35rem;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 1.25rem;
+            color: white;
+            box-shadow: 0.5rem 0.75rem 0.35rem rgba(0, 0, 0, 0.2);
+            background-image: linear-gradient(to right, #339900, #339933);
+        }
+        
+        .reject {
+            width: 80%;
+            height: 5vh;
+            border: 0.1rem solid white;
+            border-radius: 0.35rem;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 1.25rem;
+            color: white;
+            box-shadow: 0.5rem 0.75rem 0.35rem rgba(0, 0, 0, 0.2);
+            background-color: red;
+        }
+        
+        .accepted, .rejected {
+            display: none;
+        }
+        
+        #Footer{
+            text-align:left;
+            margin-left: 2.5vw;
+            font-size:1em;
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+<form action="{{ url_for('take_attendance') }}" method="POST">
+    <div id="background">
+        <div id="header">
+            <div class="headerLinks">
+                <img class="logoImage" src="static/images/logo-02.png" alt="Logo">
+                <button class="headerLinksLinkButton"> Take Attendance </button>
+            </div>
+            <div class="logout">
+                <a class="homeLink" href="/"><button type="button" class="homeButton"> Home </button></a>
+                <a class="dashboardLink" href="/teacher_dashboard"><button type="button" class="dashboardButton"> Dashboard </button></a>
+                <a class="logoutLink" href="/login"><button type="button" class="logoutButton"> Logout </button></a>
+            </div>
+        </div><br>
+        
+        <div id="content">
+            <div class="department">
+                <select id="Course" name="Course">
+                    <option value="" selected="selected">Select Course</option>
+                    {% for course in courses %}
+                        <option value="{{ course }}">{{ course }}</option>
+                    {% endfor %}
+                </select>
+                
+                <select id="Department" name="Department">
+                    <option value="" selected="selected">Select Department</option>
+                    {% for dept in departments %}
+                    <option value="{{ dept }}">{{ dept }}</option>
+                    {% endfor %}
+                </select>
+                
+                <select id="Year" name="Year">
+                    <option value="" selected="selected">Select Year</option>
+                    {% for year in years %}
+                        <option value="{{ year }}">{{ year }}</option>
+                    {% endfor %}
+                </select>
+                <br>
+                <select id="Semester" name="Semester">
+                    <option value="" selected="selected">Select Semester</option>
+                    {% for section in semesters %}
+                    <option value="{{ section }}">{{ section }}</option>
+                    {% endfor %}
+                </select>
+                
+                <select id="Section" name="Section">
+                    <option value="" selected="selected">Select Section</option>
+                    {% for section in sections %}
+                        <option value="{{ section }}">{{ section }}</option>
+                    {% endfor %}
+                </select>
+                
+                <select id="Subject" name="Subject">
+                    <option value="" selected="selected">Select Subject</option>
+                    {% for section in subjects %}
+                        <option value="{{ section }}">{{ section }}</option>
+                    {% endfor %}
+                </select>
+                
+                <button type="submit" style="width: 31vw; height: 6vh; border: 1px solid white; border-radius: 0.25rem; font-size: 2em; font-family: 'Courier New'; color: white; background-color: #800020; margin-left: 0.35%; margin-bottom: 3vh;"> Go </button>
+            </div>
+            {% if data %}
+                <table id="attendanceTable">
+                    <thead>
+                        <tr>
+                            <th> Sr.No. </th>
+                            <th> Name </th>
+                            <th> Roll No. </th>
+                            <th> Date (Time) </th>
+                            <th> Submitted Attendance </th>
+                            <th> Action </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for datum in data %}
+                            {% if datum[5] %}
+                                <tr>
+                                    <td> {{ loop.index }} </td>
+                                    <td> {{ datum[0] }} </td>
+                                    <td> {{ datum[1] }} </td>
+                                    <td> {{ datum[2] }} ({{ datum[3] }}) </td>
+                                    <td> {{ datum[4] }} </td>
+                                    <td style="background-color: {% if datum[5] == 'Accepted' %} #339900 {% else %} red {% endif %}; color: white; font-size: 1.45rem;"> {{ datum[5] }}</td>
+                                </tr>
+                            {% else %}
+                                <tr>
+                                    <td> {{ loop.index }} </td>
+                                    <td> {{ datum[0] }} </td>
+                                    <td> {{ datum[1] }} </td>
+                                    <td> {{ datum[2] }} ({{ datum[3] }}) </td>
+                                    <td> {{ datum[4] }} </td>
+                                    <td id="button{{ loop.index }}"> <button class="accept" id="accept" onclick="acceptAttendance(event, {{ loop.index }}, {{ datum }}, this)"> Accept </button> <button class="reject" id="reject" onclick="rejectAttendance(event, {{ loop.index }}, {{ datum }}, this)"> Reject </button></td>
+                                </tr>
+                            {% endif %}
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+        </div>
+        <br>
+        <div id="Footer">
+            <p> Shahzada Moon | Copyright, 2025 </p><br>
+        </div>
+    </div>
+</form>
+<script>
+    async function acceptAttendance(event, sr, data, button) {
+        event.preventDefault();
+        console.log("hello \n" + JSON.stringify(data));
+        url = "http://127.0.0.1:5000/take_attendance";
+        
+        try{
+            let response = await fetch(url, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({"attendance": data, "action": "Accepted"})
+            })
+            
+            if (response.status == 200) {
+                alert("Name : " + data[0] + "\nRoll No. : " + data[1] + "\nDate : " + data[2] + "\nAttendance : " + data[4] + "\nAction : Accepted");
+                let row = button.closest("tr");
+                let target1 = document.getElementById("button"+sr);
+                let target2 = row.querySelector(".accept");
+                let target3 = row.querySelector(".reject");
+                target2.style.display = "none";
+                target3.style.display = "none";
+                target1.style.display = "inline-block";
+                target1.style.width = "100%";
+                target1.style.backgroundImage= "linear-gradient(to right, #339900, #339933)";
+                target1.style.color = "white";
+                target1.style.border = "none";
+                target1.innerHTML = "Accepted";
+            }
+            else {
+                alert("Something went wrong ! Attendance has not been accepted.");
+            }
+        }
+        catch(error) {
+            alert("An error occured ! \nError : " + error);
+        }
+    }
+    
+    async function rejectAttendance(event, sr, data, button) {
+        event.preventDefault();
+        url = "http://127.0.0.1:5000/take_attendance";
+        console.log(data);
+        try{
+            let response = await fetch(url, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({"attendance": data, "action": "Rejected"})
+            })
+            
+            if (response.status == 200) {
+                alert("Name : " + data[0] + "\nRoll No. : " + data[1] + "\nDate : " + data[2] + "\nAttendance : " + data[4] + "\nAction : Rejected");
+                let row = button.closest("tr");
+                let target1 = document.getElementById("button"+sr);
+                let target2 = row.querySelector(".accept");
+                let target3 = row.querySelector(".reject");
+                target2.style.display = "none";
+                target3.style.display = "none";
+                target1.style.display = "inline-block";
+                target1.style.width = "100%";
+                target1.style.border = "none";
+                target1.style.backgroundColor = "red";
+                target1.innerHTML = "Rejected";
+                target1.style.color = "white";
+            }
+            else {
+                alert("Something went wrong ! Attendance has not been accepted.");
+            }
+        }
+        catch(error) {
+            alert("An error occured ! \nError : " + error);
+        }
+    }
+</script>
+</body>
+</html>

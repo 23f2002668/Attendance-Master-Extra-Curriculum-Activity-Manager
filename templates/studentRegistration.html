@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    
+    <style>
+        #background {
+            width: 100vw;
+            height: 100vh;
+            background-image: url("static/images/main-04.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: 1000;
+            position: fixed;
+        }
+        
+        #main {
+            width: 56vw;
+            height: 92vh;
+            z-index: 1000;
+            position: fixed;
+            overflow-y: scroll;
+            text-align: center;
+            background-color: #F5F5F5;
+            font-family: "Courier New", Courier, monospace;
+            margin-top: 4vh;
+            margin-left: 22vw;
+            margin-right: 22vw;
+            margin-bottom: 4vh;
+            border:1px solid darkgray;
+            border-radius: 1.25rem;
+            box-shadow: 0.75rem 0.75rem 0.5rem lightslategray;
+        }
+        
+        #content {
+            width: 90%;
+            height: 78vh;
+            z-index: 500;
+            position: relative;
+            overflow-y: scroll;
+            border: 1px solid darkgray;
+            margin-top: auto;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 2vh;
+            text-align: left;
+        }
+        
+        .data {
+            margin: 2rem 2rem 2rem 2rem;
+            font-size: 1.25rem;
+        }
+        
+        input {
+            width: 98%;
+            height: 4vh;
+            background-color: #F0F0F0;
+            border: 1px solid #E0E0E0;
+            border-radius: 0.25rem;
+            padding-left: 1%;
+            padding-right: 1%;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 1.1rem;
+            margin-top: 0.75vh;
+            margin-bottom: 3vh;
+        }
+        
+        select {
+            background-color: #F0F0F0;
+            border: 1px solid #E0E0E0;
+            border-radius: 0.25rem;
+            width: 100%;
+            height: 5vh;
+            padding-left: 1%;
+            padding-right: 1%;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 1.1rem;
+            margin-top: 0.75vh;
+            margin-bottom: 3vh;
+        }
+        
+        .showPassword {
+            font-size: 1rem;
+            padding: 0.55rem 0.45rem 0.55rem 0.45rem;
+            border:1px solid lightgray;
+            border-radius:0.25em;
+            user-select: none;
+            cursor: pointer;
+            box-shadow: 0.5rem 0.75rem 0.35rem rgba(0, 0, 0, 0.2);
+            background-image:linear-gradient(to top, white, #F8F8F8, #F5F5F5);
+        }
+        
+        #submit {
+            width: 25%;
+            height: 5vh;
+            border: 1px solid white;
+            border-radius: 0.25rem;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 1.5rem;
+            margin-top: 5vh;
+            margin-bottom: 2vh;
+            margin-left: 18%;
+            margin-right: 2.5vw;
+            color: white;
+            box-shadow: 0.5rem 0.75rem 0.35rem rgba(0, 0, 0, 0.2);
+            background-image: linear-gradient(to right, #339900, #339933);
+        }
+        
+        #reset {
+            width: 25%;
+            height: 5vh;
+            border: 1px solid white;
+            border-radius: 0.25rem;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 1.5rem;
+            margin-top: 5vh;
+            margin-bottom: 2vh;
+            margin-left: 2.5vw;
+            margin-right: 18%;
+            color: white;
+            box-shadow: 0.5rem 0.75rem 0.35rem rgba(0, 0, 0, 0.2);
+            background-image: linear-gradient(to right, #FF0000, #F80000, #F00000, #E80000, #E00000, #D80000);
+        }
+        
+        sup, span {
+            color: red;
+        }
+        
+        #note {
+            color: black;
+            font-size: 1rem;
+            margin-left: 2rem;
+            margin-right: 2rem;
+            margin-top: 4vh;
+            margin-bottom: 2vh;
+        }
+        
+        .login {
+            margin-top: 5vh;
+            margin-bottom: 3vh;
+            text-align: left;
+            text-decoration: none;
+            margin-left: 1rem;
+        }
+        
+        .login:hover{
+            color: #0066FF;
+            font-size: 1.075rem;
+        }
+        
+    </style>
+    
+</head>
+<body>
+<form>
+    <div id="background">
+        <div id="main">
+            <div id="heading">
+                <h1> Create An Account (Students) </h1>
+            </div>
+            
+            <div id="content">
+                <p id="note"><b>Note :</b> Fields containing (<span>*</span>) are necessary to fill.</p>
+                <div class="data">
+                    <label for="name"> Enter Your Name<sup>*</sup> </label><br>
+                    <input type="text" id="name" name="name" placeholder="Enter Your Name Here" autofocus required>
+                    
+                    <label for="fname"> Enter Father's Name<sup>*</sup> </label><br>
+                    <input type="text" id="fname" name="fname" placeholder="Enter Father's Name Here" required>
+                    
+                    <label for="mname"> Enter Mother's Name <sup>*</sup> </label><br>
+                    <input type="text" id="mname" name="mname" placeholder="Enter Mother's Name Here" required>
+                    
+                    <label for="gender"> Enter Gender<sup>*</sup> </label><br>
+                    <input type="text" id="gender" name="gender" placeholder="Enter Your Gender" required>
+                    
+                    <label for="dob"> Enter Your D.O.B.<sup>*</sup> </label><br>
+                    <input type="date" id="dob" name="dob" placeholder="Enter Your D.O.B. Here" required>
+                    
+                    <label for="course"> Enter Course<sup>*</sup> </label><br>
+                    <input type="text" class="student" id="course" name="course" placeholder="Enter Course Here" required>
+                    
+                    <label for="dept"> Enter Department<sup>*</sup> </label><br>
+                    <input type="text" class="student" id="dept" name="dept" placeholder="Enter Department Here" required>
+                    
+                    <label for="year"> Enter Year<sup>*</sup> </label><br>
+                    <input type="text" class="student" id="year" name="year" placeholder="Enter Year Here" required>
+                    
+                    <label for="sem"> Enter Semester<sup>*</sup> </label><br>
+                    <input type="text" class="student" id="sem" name="sem" placeholder="Enter Semester Here" required>
+                    
+                    <label for="sec"> Enter Section<sup>*</sup> </label><br>
+                    <input type="text" class="student" id="sec" name="sec" placeholder="Enter Section Here" required>
+                    
+                    <label for="roll"> Enter Roll No.<sup>*</sup> </label><br>
+                    <input type="text" class="student" id="roll" name="roll" placeholder="Enter Roll No. Here" required>
+                    
+                    <label for="cont"> Enter Contact No.<sup>*</sup> </label><br>
+                    <input type="tel" id="cont" name="cont" placeholder="Enter Contact No. Here" required>
+                    
+                    <label for="email"> Enter Email ID<sup>*</sup> </label><br>
+                    <input type="email" id="email" name="email" placeholder="Enter Email ID Here" required>
+
+                    <label for="photo"> Upload Your Photo (Only jpg/jpeg/png/webp formats are allowed.)<sup>*</sup> </label><br>
+                    <input type="file" id="photo" name="photo" placeholder="Enter Email ID Here" required>
+                    
+                    <label for="password"> Enter Password<sup>*</sup> </label><br>
+                    <input type="password" style="width: 90%;" id="password" name="password" placeholder="Enter Password Here" required>
+                    <span class="showPassword" onclick="showPassword()"> 👁️</span>
+                    
+                    <label for="verifyPassword"> Verify Password<sup>*</sup> </label><br>
+                    <input type="password" style="width: 90%;" id="verifyPassword" name="verifyPassword" placeholder="Enter Password Here" required>
+                    <span class="showPassword" onclick="showVerifyPassword()"> 👁️</span>
+                    
+                    <button id="submit"> Submit </button>
+                    <button id="reset"> Reset </button>
+                </div>
+                <div class="login">
+                    <a href="/login" class="login"> Already have an account ? Login Here</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showPassword() {
+            let password = document.getElementById("password");
+            
+            if (password.type === "password") {
+                password.type = "text";
+            }
+            else {
+                password.type = "password";
+            }
+        }
+        
+        function showVerifyPassword() {
+            let verify_password = document.getElementById("verifyPassword");
+            
+            if (verify_password.type === "password") {
+                verify_password.type = "text";
+            }
+            else {
+                verify_password.type = "password";
+            }
+            
+        }
+    </script>
+</form>
+</body>
+</html>

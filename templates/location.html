@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask Location Example</title>
+</head>
+<body>
+<h1>Get My Location</h1>
+<button onclick="sendLocation()">Send Location to Flask</button>
+<p id="status"></p>
+
+<script>
+    function sendLocation() {
+        const status = document.getElementById('status');
+        
+        if (!navigator.geolocation) {
+            status.innerText = "Geolocation is not supported.";
+            return;
+        }
+        
+        navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const data = {
+                        latitude: position.coords.latitude,
+                        longitude: position.coords.longitude
+                    };
+                    
+                    fetch('/location', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    })
+                            .then(response => response.json())
+                            .then(result => {
+                                status.innerText = result.message;
+                            })
+                            .catch(error => {
+                                status.innerText = "Error sending location.";
+                                console.error(error);
+                            });
+                },
+                (error) => {
+                    status.innerText = `Error: ${error.message}`;
+                }
+        );
+    }
+</script>
+</body>
+</html>
